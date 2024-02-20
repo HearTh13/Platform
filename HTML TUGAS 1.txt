@@ -1,0 +1,9 @@
+<html>
+	<head>
+		<title>Diary Achmad</title>
+	</head>
+	<body>
+		<h1>Hari 1</h1>
+		<p>Hari pertama saya ngoding. Saya kesal. Karena saya tidak tahu kalau Java itu Case Sensitive</p>
+	</body>
+</html>
