@@ -1,21 +1,34 @@
-const submitButton = document.querySelector('#submit')
-const capres = ['Anis', 'Ganjar']
+function submitForm() {
+    const namaInput = document.getElementById('nama').value;
+    const jumlahPilihanInput = parseInt(document.getElementById('jumlahPilihan').value);
 
-submitButton.addEventListener('click', (ev) => {
-    ev.preventDefault()
-    const amountChoice = document.getElementById('jumlahPilihan').value
-    const list = document.getElementById('choiceList')
-    const choiceId = document.getElementById('choiceId')
-    let temp = " "
-    let tempList = " "
-    if (amountChoice.length <= 0) {
-        alert("isi dulu bjir")
-    } else {
-        for (let i = 1; i <= amountChoice; i++) {
-            temp += `Pilihan ${i}: <br>`
-            tempList += ` Pilihan ${i} <br>`
-        }
+    // Validasi jumlah pilihan
+    if (isNaN(jumlahPilihanInput) || jumlahPilihanInput < 1) {
+        alert('Masukkan jumlah pilihan yang valid (minimal 1).');
+        return;
     }
-    list.innerHTML = tempList
-    choiceId.innerHTML = temp
-})
+
+    // Tampilkan inputan sesuai dengan jumlah pilihan
+    showInputFields(jumlahPilihanInput);
+}
+
+function showInputFields(jumlah) {
+    const tampilanContainer = document.getElementById('tampilanContainer');
+    
+    // Bersihkan konten sebelum menampilkan inputan baru
+    tampilanContainer.innerHTML = '';
+
+    // Tambahkan inputan sesuai dengan jumlah yang dimasukkan
+    for (let i = 1; i <= jumlah; i++) {
+        const label = document.createElement('label');
+        label.textContent = `Teks Tampilan ${i}:`;
+
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.name = `teksTampilan${i}`;
+
+        tampilanContainer.appendChild(label);
+        tampilanContainer.appendChild(input);
+        tampilanContainer.appendChild(document.createElement('br'));
+    }
+}
