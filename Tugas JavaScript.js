@@ -1,34 +1,13 @@
-function submitForm() {
-    const namaInput = document.getElementById('nama').value;
-    const jumlahPilihanInput = parseInt(document.getElementById('jumlahPilihan').value);
+document.getElementById("btn").addEventListener("click",function(e){
+    e.preventDefault();
+    let jumlah = document.getElementById("jumlahPilihan").value;
+    let text;
+    console.log(jumlah);
 
-    // Validasi jumlah pilihan
-    if (isNaN(jumlahPilihanInput) || jumlahPilihanInput < 1) {
-        alert('Masukkan jumlah pilihan yang valid (minimal 1).');
-        return;
+    for (let i = 0; i <jumlah; i++) {
+        text += '<label>Pilihan</label>';
+        text += '<input type="text" required>';
     }
-
-    // Tampilkan inputan sesuai dengan jumlah pilihan
-    showInputFields(jumlahPilihanInput);
-}
-
-function showInputFields(jumlah) {
-    const tampilanContainer = document.getElementById('tampilanContainer');
-    
-    // Bersihkan konten sebelum menampilkan inputan baru
-    tampilanContainer.innerHTML = '';
-
-    // Tambahkan inputan sesuai dengan jumlah yang dimasukkan
-    for (let i = 1; i <= jumlah; i++) {
-        const label = document.createElement('label');
-        label.textContent = `Teks Tampilan ${i}:`;
-
-        const input = document.createElement('input');
-        input.type = 'text';
-        input.name = `teksTampilan${i}`;
-
-        tampilanContainer.appendChild(label);
-        tampilanContainer.appendChild(input);
-        tampilanContainer.appendChild(document.createElement('br'));
-    }
-}
+    text += '<br><button>Submit</button>';
+    document.getElementById("form1").innerHTML = text;
+});
