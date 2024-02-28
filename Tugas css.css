@@ -2,6 +2,8 @@
 body {
     font-family: 'Arial', sans-serif; 
     font-size: 16px; 
+    background: url('https://scontent-xsp1-1.xx.fbcdn.net/v/t39.30808-6/248982337_3109003779332386_4427896534583959057_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=783fdb&_nc_ohc=VAKHUy0b278AX8b571Y&_nc_ht=scontent-xsp1-1.xx&oh=00_AfDDKWoFQKGEy1geWw4XT05yh4oBUeti719_oBI5gTiNPg&oe=65E42BAB') no-repeat center center fixed;
+    background-size: cover;
 }
 
 h1{
@@ -9,6 +11,7 @@ h1{
 } 
 
 h2, h3 {
+    text-align: left;
     color: #333; 
 }
 
@@ -21,6 +24,7 @@ b {
 }
 
 ul, ol {
+    text-align: left;
     margin-left: 20px;
 }
 
@@ -36,7 +40,7 @@ th, td {
 }
 
 img {
-    max-width: 100%;
+    max-width: 50%;
     height: auto;
     display: block;
     margin: 0 auto;
@@ -62,25 +66,28 @@ a:hover {
 }
 
 .column {
-    float: left;
+    float: inline-start;
     padding: 5px;
 }
 
 .column.side {
+    text-align: justify;
     width: 25%;
 }
 
 .column.middle {
+    text-align: justify;
     width: 45%;
 }
 
-.row {
-
+.column.all {
+    font-size: medium;
+    width: 100%;
 }
 
-@media screen and (max-width: 600px) {
-    .column.side,
-    .column.middle {
-    width: auto;
-    }
-}
+.background-text {
+    background-color: #f0f0f0; 
+    background-blend-mode: multiply;
+    padding: 5px; 
+    display: inline-block; 
+  }
