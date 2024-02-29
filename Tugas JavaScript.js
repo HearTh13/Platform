@@ -1,30 +1,67 @@
-document.getElementById("btn").addEventListener("click",function(e){
-    e.preventDefault();
-    let jumlah = document.getElementById("jumlahPilihan").value;
-    let text = '<form>';
-    console.log(jumlah);
+var tampilanInputs;
 
-    for (let i = 0; i <jumlah; i++) {
-        text += '<label>Pilihan</label>';
-        text += '<input type="text" required>';
-    }
-    text += '<br><button id="btn2">Submit</button>';
-    text += '</form>';
-    text += '<div id="form2"></div>';
-    document.getElementById("form1").innerHTML = text;
+document.getElementById('btn').addEventListener('click', function(e) {
+    textInput();
 });
 
-document.getElementById("btn2").addEventListener("click",function(e) {
-    e.preventDefault();
-    let jumlah = document.getElementById("jumlahPilihan").value;
-    let text = '<form>';
-    console.log(jumlah);
+function textInput() {
+    var jumlah = document.getElementById("jumlah").value;
+    tampilanInputs = document.getElementById("tampilanInputs");
 
-    for (let i = 0; i <jumlah; i++) {
-        text += '<input type="dropdown">';
-        text += '<label>Pilihan</label>';
+    console.log(jumlah);
+    console.log(tampilanInputs);
+
+    tampilanInputs.innerHTML = '';
+
+    for (var i = 1; i <= jumlah; i++) {
+        var label = document.createElement("label");
+        label.innerHTML = "Pilihan " + i + ":";
+        
+        var input = document.createElement("input");
+        input.type = "text";
+        input.name = "teksTampilan" + i;
+        
+        tampilanInputs.appendChild(label);
+        tampilanInputs.appendChild(input);
+        tampilanInputs.appendChild(document.createElement("br"));
     }
-    text += '<br><button>Submit</button>';
-    text += '</form>';
-    document.getElementById("form2").innerHTML = text;
-});
+    var button = document.createElement("button");
+    button.type = "button";
+    button.id = "buttonOK";
+    button.innerHTML = "OK";
+
+    tampilanInputs.appendChild(button);
+    tampilanInputs.appendChild(document.createElement("br"));
+
+    document.getElementById("buttonOK").addEventListener("click", function(e){
+        textRadio();
+    });
+}
+
+function textRadio() {
+    var jumlah = document.getElementById("jumlah").value;
+
+    console.log(jumlah);
+    console.log(tampilanInputs);
+
+    tampilanInputs.innerHTML = '';
+
+    for (var i = 1; i <= jumlah; i++) {
+        var input = document.createElement("input");
+        input.type = "Radio";
+        input.name = "teksTampilan" + i;
+
+        var label = document.createElement("label");
+        label.innerHTML = "Pilihan " + i + ":";
+        
+        tampilanInputs.appendChild(label);
+        tampilanInputs.appendChild(input);
+        tampilanInputs.appendChild(document.createElement("br"));
+    }
+    var button = document.createElement("button");
+    button.name = "buttonLast";
+    button.textContent = "OK";
+    button.id = "buttonLast";
+    tampilanInputs.appendChild(button);
+    tampilanInputs.appendChild(document.createElement("br"));
+}
