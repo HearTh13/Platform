@@ -32,10 +32,12 @@ function textInput() {
 
     tampilanInputs.appendChild(button);
     tampilanInputs.appendChild(document.createElement("br"));
+    tampilanInputs.appendChild(document.createElement("br"));
 
     document.getElementById("buttonOK").addEventListener("click", function(e){
         textRadio();
     });
+
 }
 
 function textRadio() {
@@ -44,19 +46,12 @@ function textRadio() {
     console.log(jumlah);
     console.log(tampilanInputs);
 
-    tampilanInputs.innerHTML = '';
-
     for (var i = 1; i <= jumlah; i++) {
-        var input = document.createElement("input");
-        input.type = "Radio";
-        input.name = "teksTampilan" + i;
-
         var label = document.createElement("label");
-        label.innerHTML = "Pilihan " + i + ":";
+        label.innerHTML ='<input type = "Radio" name = "teksTampilan' + i + '">' + " Pilihan " + i;
+        label.setAttribute("for", "pilihan" + i);
         
         tampilanInputs.appendChild(label);
-        tampilanInputs.appendChild(input);
-        tampilanInputs.appendChild(document.createElement("br"));
     }
     var button = document.createElement("button");
     button.name = "buttonLast";
