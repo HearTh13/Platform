@@ -53,32 +53,24 @@ function textRadio() {
 
     for (var i = 1; i <= jumlah; i++) {
         var label = document.createElement("label");
-        var radioInput = document.createElement("input");
-        radioInput.type = "radio";
-        radioInput.name = "teksTampilan";
-        radioInput.id = "Radio" + i;
-
-        label.innerHTML += " Pilihan " + i;
-
-        tampilanInputs.appendChild(label);
-        tampilanInputs.appendChild(radioInput);
-
+        label.innerHTML += data[i - 1];
         
-    }
+        radio[i - 1] = document.createElement("input");
+        radio[i - 1].type = "radio";
+        radio[i - 1].name = "teksTampilan";
+        radio[i - 1].id = "Radio" + i;
+        
+        tampilanInputs.appendChild(radio[i - 1]);
+        tampilanInputs.appendChild(label);
 
-    for (i = 1; i <= jumlah; i++) {
-        radio[i - 1] = document.getElementById("Radio" + i);
-        radio[i - 1].addEventListener("click", function (e) {
-            var radios = document.getElementsByName("teksTampilan");
-
-            radios.forEach(function (x) {
-                x.checked = false;
-            });
-
+        radio[i - 1].addEventListener("click", function () {
+            for (j = 0; j < jumlah; j++) {
+                radio[j].checked = false;
+            }
             this.checked = true;
         });
     }
-
+    
     console.log(radio);
 
     var button = document.createElement("button");
@@ -93,17 +85,18 @@ function textRadio() {
     div.id = "Last";
     document.getElementById("buttonLast").addEventListener("click", function (e) {
         pilihan = '';
-        console.log(e);
         for (var i = 1; i <= jumlah; i++) {
             if (radio[i - 1].checked) {
                 pilihan = data[i - 1];
                 console.log(pilihan);
+                tampilkanData();
             }
         }
-        tampilkanData();
+        
     });
 }
 
 function tampilkanData() {
-    // Implement your logic here
+    var tampil = document.getElementById("Last");
+    tampil.innerHTML = "<>"
 }

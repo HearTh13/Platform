@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
@@ -72,3 +78,12 @@ button:hover {
 #buttonLast:hover {
     background-color: #2980b9;
 }
+
+#Wrapper {
+    border: 2px solid black;
+    padding: 20px;
+
+    margin: 20px;
+}
+
+
