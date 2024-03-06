@@ -98,5 +98,5 @@ function textRadio() {
 
 function tampilkanData() {
     var tampil = document.getElementById("Last");
-    tampil.innerHTML = "<>"
+    tampil.innerText = "Hallo, nama saya <Teks Nama>, saya mempunyai sejumlah <Jml> pilihan yaitu <Teks Pilihan 1>, <Teks Pilihan 2>, <Teks Pilihan dst>, dan saya memilih <Teks Pilihan >"
 }
