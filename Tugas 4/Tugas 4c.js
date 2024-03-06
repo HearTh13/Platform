@@ -12,7 +12,7 @@ document.getElementById('btn').addEventListener('click', function () {
 
 function textInput() {
     jumlah = document.getElementById("jumlah").value;
-    tampilanInputs = document.getElementById("tampilanInputs");
+    tampilanInputs = document.getElementById("tampilanInputs1");
     nama = document.getElementById("nama").value;
 
     tampilanInputs.innerHTML = '';
@@ -38,8 +38,6 @@ function textInput() {
     button.innerHTML = "OK";
 
     tampilanInputs.appendChild(button);
-    tampilanInputs.appendChild(document.createElement("br"));
-    tampilanInputs.appendChild(document.createElement("br"));
 
     document.getElementById("buttonOK").addEventListener("click", function () {
         button.remove();
@@ -53,19 +51,18 @@ function textInput() {
 
 function textRadio() {
     jumlah = document.getElementById("jumlah").value;
+    tampilanInputs = document.getElementById("tampilanInputs2");
 
     console.log(data);
 
     for (var i = 1; i <= jumlah; i++) {
         var label = document.createElement("label");
-        label.innerHTML += data[i - 1];
-        label.classList.add("labelStyle");
+        label.innerHTML = data[i - 1];
         
         radio[i - 1] = document.createElement("input");
         radio[i - 1].type = "radio";
         radio[i - 1].name = "teksTampilan";
         radio[i - 1].id = "Radio" + i;
-        radio[i - 1].classList.add("radioStyle");
         
         tampilanInputs.appendChild(radio[i - 1]);
         tampilanInputs.appendChild(label);
@@ -86,8 +83,6 @@ function textRadio() {
     button.id = "buttonLast";
 
     tampilanInputs.appendChild(button);
-    tampilanInputs.appendChild(document.createElement("br"));
-    tampilanInputs.appendChild(document.createElement("br"));
 
     document.getElementById("buttonLast").addEventListener("click", function () {
         button.remove();
@@ -103,6 +98,7 @@ function textRadio() {
 }
 
 function tampilkanData() {
+    tampilanInputs = document.getElementById("tampilanInputs3");
     console.log(jumlah);
     var tampil = document.createElement("div");
     tampil.innerHTML = "<p>Hallo, nama saya "+nama+", saya mempunyai sejumlah "+jumlah+" pilihan yaitu: ";
