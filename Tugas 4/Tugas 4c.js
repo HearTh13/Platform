@@ -6,15 +6,17 @@ var jumlah;
 var pilihan;
 
 document.getElementById('btn').addEventListener('click', function () {
-    this.remove();
-    textInput();
+    jumlah = document.getElementById("jumlah").value;
+    nama = document.getElementById("nama").value;
+    if (nama != "" || jumlah != "" || nama != null || jumlah != null) {
+        this.remove();
+        textInput();
+    }
 });
 
 function textInput() {
-    jumlah = document.getElementById("jumlah").value;
     tampilanInputs = document.getElementById("tampilanInputs1");
-    nama = document.getElementById("nama").value;
-
+    
     tampilanInputs.innerHTML = '';
 
     var input = [];
