@@ -1,15 +1,19 @@
 var tampilanInputs;
+var nama;
 var data = [];
 var radio = [];
+var jumlah;
 var pilihan;
 
-document.getElementById('btn').addEventListener('click', function (e) {
+document.getElementById('btn').addEventListener('click', function () {
+    this.remove();
     textInput();
 });
 
 function textInput() {
-    var jumlah = document.getElementById("jumlah").value;
+    jumlah = document.getElementById("jumlah").value;
     tampilanInputs = document.getElementById("tampilanInputs");
+    nama = document.getElementById("nama").value;
 
     tampilanInputs.innerHTML = '';
 
@@ -37,7 +41,8 @@ function textInput() {
     tampilanInputs.appendChild(document.createElement("br"));
     tampilanInputs.appendChild(document.createElement("br"));
 
-    document.getElementById("buttonOK").addEventListener("click", function (e) {
+    document.getElementById("buttonOK").addEventListener("click", function () {
+        button.remove();
         for (var i = 1; i <= jumlah; i++) {
             data[i - 1] = input[i - 1].value;
         }
@@ -47,18 +52,20 @@ function textInput() {
 }
 
 function textRadio() {
-    var jumlah = document.getElementById("jumlah").value;
+    jumlah = document.getElementById("jumlah").value;
 
     console.log(data);
 
     for (var i = 1; i <= jumlah; i++) {
         var label = document.createElement("label");
         label.innerHTML += data[i - 1];
+        label.classList.add("labelStyle");
         
         radio[i - 1] = document.createElement("input");
         radio[i - 1].type = "radio";
         radio[i - 1].name = "teksTampilan";
         radio[i - 1].id = "Radio" + i;
+        radio[i - 1].classList.add("radioStyle");
         
         tampilanInputs.appendChild(radio[i - 1]);
         tampilanInputs.appendChild(label);
@@ -80,11 +87,10 @@ function textRadio() {
 
     tampilanInputs.appendChild(button);
     tampilanInputs.appendChild(document.createElement("br"));
+    tampilanInputs.appendChild(document.createElement("br"));
 
-    var div = document.createElement("div");
-    div.id = "Last";
-    document.getElementById("buttonLast").addEventListener("click", function (e) {
-        pilihan = '';
+    document.getElementById("buttonLast").addEventListener("click", function () {
+        button.remove();
         for (var i = 1; i <= jumlah; i++) {
             if (radio[i - 1].checked) {
                 pilihan = data[i - 1];
@@ -97,6 +103,17 @@ function textRadio() {
 }
 
 function tampilkanData() {
-    var tampil = document.getElementById("Last");
-    tampil.innerText = "Hallo, nama saya <Teks Nama>, saya mempunyai sejumlah <Jml> pilihan yaitu <Teks Pilihan 1>, <Teks Pilihan 2>, <Teks Pilihan dst>, dan saya memilih <Teks Pilihan >"
+    console.log(jumlah);
+    var tampil = document.createElement("div");
+    tampil.innerHTML = "<p>Hallo, nama saya "+nama+", saya mempunyai sejumlah "+jumlah+" pilihan yaitu: ";
+    for (var i = 0; i < jumlah; i++) {
+        if (i == (jumlah - 1)) {
+            tampil.innerHTML += " dan "+data[i];
+        }
+        else {
+            tampil.innerHTML += data[i]+", ";
+        }
+    }
+    tampil.innerHTML += " dan saya memilih "+pilihan+"</p>";
+    tampilanInputs.appendChild(tampil);
 }

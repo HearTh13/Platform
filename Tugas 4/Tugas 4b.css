@@ -61,9 +61,16 @@ button:hover {
     margin-top: 20px;
 }
 
-.radio-label {
-    display: inline-block;
-    margin-right: 15px;
+.labelStyle {
+    margin-right: 10px; 
+}
+
+.radioStyle {
+    margin-right: 5px; 
+}
+
+.radioStyle:checked + label {
+    font-weight: bold; 
 }
 
 #buttonLast {
