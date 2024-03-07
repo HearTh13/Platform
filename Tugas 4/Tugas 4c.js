@@ -94,15 +94,20 @@ function textRadio() {
     tampilanInputs.appendChild(button);
 
     document.getElementById("buttonLast").addEventListener("click", function () {
-        button.remove();
+        console.log(radio[0].checked);
+        console.log(radio[1].checked);
+        var check = false;
         for (var i = 0; i < jumlah; i++) {
-            var check = radio[i].checked;
-
             if (radio[i].checked) {
+                check = true;
                 pilihan = data[i];
                 console.log(pilihan);
-                tampilkanData();
+                
             }
+        }
+        if (check) {
+            tampilkanData();
+            button.remove();
         }
     });
 }
