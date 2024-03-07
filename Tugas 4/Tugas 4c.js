@@ -8,7 +8,7 @@ var pilihan;
 document.getElementById('btn').addEventListener('click', function () {
     jumlah = document.getElementById("jumlah").value;
     nama = document.getElementById("nama").value;
-    if (nama != "" || jumlah != "" || nama != null || jumlah != null) {
+    if (nama !== "" && jumlah !== "" && nama !== null && jumlah !== null) {
         this.remove();
         textInput();
     }
@@ -42,13 +42,20 @@ function textInput() {
     tampilanInputs.appendChild(button);
 
     document.getElementById("buttonOK").addEventListener("click", function () {
-        button.remove();
-        for (var i = 1; i <= jumlah; i++) {
-            data[i - 1] = input[i - 1].value;
+        var check = true;
+        for (var i = 0; i < jumlah; i++) {
+            data[i] = input[i].value;
+            if (data[i] == '' || data[i] == null) {
+                check = false;
+            }
+            console.log(data[i]);
+            console.log(check);
         }
-        textRadio();
+        if (check) {
+            button.remove();
+            textRadio();
+        }
     });
-
 }
 
 function textRadio() {
@@ -88,14 +95,15 @@ function textRadio() {
 
     document.getElementById("buttonLast").addEventListener("click", function () {
         button.remove();
-        for (var i = 1; i <= jumlah; i++) {
-            if (radio[i - 1].checked) {
-                pilihan = data[i - 1];
+        for (var i = 0; i < jumlah; i++) {
+            var check = radio[i].checked;
+
+            if (radio[i].checked) {
+                pilihan = data[i];
                 console.log(pilihan);
                 tampilkanData();
             }
         }
-        
     });
 }
 
