@@ -36,6 +36,20 @@ input[type="text"] {
     margin-bottom: 10px;
 }
 
+.lingkaran {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    float: right;
+    margin-left: 10px;
+}
+
+.lingkaran img {
+    object-fit: cover;
+    display: block;
+  }
+
 input[type="radio"] {
     margin-right: 5px;
 }
