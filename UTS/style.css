@@ -1,0 +1,22 @@
+body {
+  min-height: 2000px;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(244, 244, 244, 1) 83%);
+  padding-top: 2rem;
+}
+.jumbotron {
+  padding-top: 2rem;
+  background-color: rgb(238, 238, 228);
+}
+
+#projects {
+  background-color: #eeeee4;
+}
+
+#con {
+  padding-top: 2rem;
+}
+
+#container {
+  border-radius: 15px;
+}
