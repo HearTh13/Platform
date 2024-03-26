@@ -23,12 +23,25 @@ body {
   border: 2px solid #ffffff;
 }
 
+#fnama {
+  width: 520px;
+}
+
+#lnama {
+  width: 520px;
+}
+
+#email {
+  width: 1065px;
+}
+
 .dropdown-menu {
   max-height: 20vh;
   overflow: scroll;
 }
 
-.form-control {
+.opacity-05 {
+  border-radius: 7px;
   opacity: 0.5;
 }
 

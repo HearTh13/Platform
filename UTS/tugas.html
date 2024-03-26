@@ -22,10 +22,10 @@
         <div class="collapse navbar-collapse justify-content-md-end" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             <a class="nav-link" href="beranda.html">Beranda</a>
-            <a class="nav-link active" aria-current="page" href="tentang.html">Tentang</a>
+            <a class="nav-link" href="tentang.html">Tentang</a>
             <a class="nav-link" href="kisahku.html">Kisahku</a>
             <a class="nav-link" href="#">Pendidikan</a>
-            <a class="nav-link" href="#">Tugas</a>
+            <a class="nav-link active" aria-current="page" href="tugas.html">Tugas</a>
           </div>
         </div>
       </div>
@@ -35,7 +35,36 @@
     <!-- Container -->
     <div id="con">
       <div class="container-md shadow-sm text-dark" id="container">
-        <div class="container text-center"></div>
+        <div class="container text-center">
+          <div class="container text-center text-light">
+            <div class="row text-light" style="padding: 20px; border-radius: 15px">
+              <h2 style="font-family: 'Arial', sans-serif; font-size: 28px; font-weight: bold; text-align: center; text-transform: uppercase; letter-spacing: 2px; margin: 0">Tugas 4</h2>
+            </div>
+            <div class="row align-items-start text-md-start">
+              <div class="col">
+                First Name:
+                <input class="opacity-05" type="text" id="fnama" name="fnama" placeholder="Awal" required />
+              </div>
+              <div class="col">
+                Last Name:
+                <input class="opacity-05" type="text" id="lnama" name="lnama" placeholder="Akhir" required />
+              </div>
+            </div>
+            <br />
+            <div class="text-md-start">
+              E-mail:
+              <input class="opacity-05" type="text" id="email" name="email" placeholder="example@mail.com" required />
+            </div>
+            <br />
+            <div class="text-md-start">
+              Hobby:
+              <br />
+              <input class="opacity-05" type="number" id="jumlah" name="jumlah" min="1" max="99" placeholder="0" required />
+            </div>
+            <br />
+            <button type="button" class="btn btn-dark" id="btn">Submit</button>
+          </div>
+        </div>
       </div>
     </div>
     <!-- End Container -->
