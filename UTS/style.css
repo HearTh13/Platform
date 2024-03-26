@@ -1,10 +1,9 @@
 body {
-  min-height: 600px;
+  min-height: 800px;
   background-image: url('img/background.avif');
 }
 .jumbotron {
   padding-top: 2rem;
-  background-color: rgb(238, 238, 228);
 }
 
 #projects {
@@ -21,4 +20,25 @@ body {
   padding-bottom: 1rem;
   background-color: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(5px);
+  border: 2px solid #ffffff;
+}
+
+.dropdown-menu {
+  max-height: 20vh;
+  overflow: scroll;
+}
+
+.form-control {
+  opacity: 0.5;
+}
+
+.navbar-nav .nav-link {
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  transition: border-bottom-color 0.3s ease-in-out;
+  border-bottom: 2px solid transparent;
+}
+
+.navbar-nav .nav-link:hover {
+  border-bottom-color: #007bff; /* Ubah warna sesuai keinginan Anda */
 }
