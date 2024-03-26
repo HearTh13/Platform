@@ -68,3 +68,7 @@ body {
 .profile h1 {
   margin-top: 10px; /* Sesuaikan dengan jarak yang diinginkan antara gambar dan teks */
 }
+
+.pad-3 {
+  padding-left: 2rem;
+}
