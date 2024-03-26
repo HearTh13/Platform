@@ -3,18 +3,21 @@ var fnama;
 var lnama;
 var email;
 var data = [];
-var radio = [];
+var checkBox = [];
 var jumlah;
-var pilihan;
+var pilihan = [];
 
 document.getElementById('btn').addEventListener('click', function () {
   jumlah = document.getElementById('jumlah').value;
   fnama = document.getElementById('fnama').value;
   lnama = document.getElementById('lnama').value;
   email = document.getElementById('email').value;
-  if (fnama !== '' && fnama !== '' && jumlah !== '' && fnama !== null && fnama !== null && jumlah !== null) {
+  if (fnama !== '' && lnama !== '' && jumlah !== '' && email !== '' && fnama !== null && lnama !== null && jumlah !== null && email !== null) {
+    document.getElementById('alert').style.display = 'none';
     this.remove();
     textInput();
+  } else {
+    document.getElementById('alert').style.display = 'block';
   }
 });
 
@@ -47,7 +50,7 @@ function textInput() {
   button.type = 'button';
   button.id = 'buttonOK';
   button.className = 'btn btn-dark';
-  button.innerHTML = 'Submit';
+  button.innerHTML = 'Oke';
 
   konten.appendChild(button);
   tampilanInputs.appendChild(konten);
@@ -63,8 +66,11 @@ function textInput() {
       console.log(check);
     }
     if (check) {
+      document.getElementById('alert').style.display = 'none';
       button.remove();
       textRadio();
+    } else {
+      document.getElementById('alert').style.display = 'block';
     }
   });
 }
@@ -73,30 +79,28 @@ function textRadio() {
   jumlah = document.getElementById('jumlah').value;
   tampilanInputs = document.getElementById('tampilanInputs2');
 
-  console.log(data);
+  var title = document.createElement('div');
+  title.className = 'text-md-start text-light';
+  title.textContent = 'Pilih hobby yang paling anda suka:';
+
+  tampilanInputs.appendChild(title);
+  tampilanInputs.appendChild(document.createElement('br'));
 
   for (var i = 1; i <= jumlah; i++) {
     var label = document.createElement('label');
     label.innerHTML = data[i - 1];
     label.className = 'text-light pad-3';
 
-    radio[i - 1] = document.createElement('input');
-    radio[i - 1].type = 'radio';
-    radio[i - 1].name = 'teksTampilan';
-    radio[i - 1].id = 'Radio' + i;
-    radio[i - 1].className = 'form-check-input';
+    checkBox[i - 1] = document.createElement('input');
+    checkBox[i - 1].type = 'checkbox';
+    checkBox[i - 1].name = 'teksTampilan';
+    checkBox[i - 1].id = 'Radio' + i;
+    checkBox[i - 1].className = 'form-check-input';
 
-    tampilanInputs.appendChild(radio[i - 1]);
+    tampilanInputs.appendChild(checkBox[i - 1]);
     tampilanInputs.appendChild(label);
     tampilanInputs.appendChild(document.createElement('br'));
     tampilanInputs.appendChild(document.createElement('br'));
-
-    radio[i - 1].addEventListener('click', function () {
-      for (j = 0; j < jumlah; j++) {
-        radio[j].checked = false;
-      }
-      this.checked = true;
-    });
   }
 
   tampilanInputs.appendChild(document.createElement('br'));
@@ -106,7 +110,7 @@ function textRadio() {
 
   var button = document.createElement('button');
   button.name = 'buttonLast';
-  button.textContent = 'Submit';
+  button.textContent = 'Oke';
   button.id = 'buttonLast';
   button.className = 'btn btn-dark';
 
@@ -114,19 +118,19 @@ function textRadio() {
   tampilanInputs.appendChild(konten);
 
   document.getElementById('buttonLast').addEventListener('click', function () {
-    console.log(radio[0].checked);
-    console.log(radio[1].checked);
     var check = false;
     for (var i = 0; i < jumlah; i++) {
-      if (radio[i].checked) {
+      if (checkBox[i].checked) {
         check = true;
-        pilihan = data[i];
-        console.log(pilihan);
+        pilihan[i] = data[i];
       }
     }
     if (check) {
+      document.getElementById('alert').style.display = 'none';
       tampilkanData();
       button.remove();
+    } else {
+      document.getElementById('alert').style.display = 'block';
     }
   });
 }
@@ -135,7 +139,8 @@ function tampilkanData() {
   tampilanInputs = document.getElementById('tampilanInputs3');
   console.log(jumlah);
   var tampil = document.createElement('div');
-  tampil.innerHTML = '<p>Hallo, nama saya ' + fnama + ' ' + lnama + ' dengan e-mail' + email + ', saya mempunyai sejumlah ' + jumlah + ' hobby pilihan yaitu: ';
+  tampil.className = 'text-light';
+  tampil.innerHTML = '<p>Hallo, nama saya ' + fnama + ' ' + lnama + ' dengan e-mail ' + email + ', saya mempunyai sejumlah ' + jumlah + ' hobby pilihan yaitu: ';
   for (var i = 0; i < jumlah; i++) {
     if (i == jumlah - 1) {
       tampil.innerHTML += ' dan ' + data[i];
@@ -143,6 +148,14 @@ function tampilkanData() {
       tampil.innerHTML += data[i] + ', ';
     }
   }
-  tampil.innerHTML += ' dan saya memilih ' + pilihan + '</p>';
+  tampil.innerHTML += ' dan saya memilih ';
+  for (var i = 0; i < pilihan.length; i++) {
+    if (i == pilihan.length - 1) {
+      tampil.innerHTML += ' dan ' + pilihan[i];
+    } else {
+      tampil.innerHTML += pilihan[i] + ', ';
+    }
+  }
+  tampil.innerHTML += '</p>';
   tampilanInputs.appendChild(tampil);
 }

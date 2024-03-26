@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="style.css" />
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm" id="navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm fixed-top" id="navbar">
       <div class="container-fluid">
         <a class="navbar-brand" href="beranda.html">
           <img src="img\icon.svg" alt="icon" width="30" height="30" class="d-inline-block align-text-top" />
@@ -40,20 +40,23 @@
             <div class="row text-light" style="padding: 20px; border-radius: 15px">
               <h2 style="font-family: 'Arial', sans-serif; font-size: 28px; font-weight: bold; text-align: center; text-transform: uppercase; letter-spacing: 2px; margin: 0">Tugas 4</h2>
             </div>
-            <div class="row align-items-start text-md-start">
+            <div class="row align-items-start text-md-start" >
               <div class="col">
                 First Name:
-                <input class="opacity-05" type="text" id="fnama" name="fnama" placeholder="Awal" required />
+                <input class="opacity-05 border-dark" type="text" id="fnama" name="fnama" placeholder="Awal" required />
               </div>
               <div class="col">
                 Last Name:
-                <input class="opacity-05" type="text" id="lnama" name="lnama" placeholder="Akhir" required />
+                <input class="opacity-05 border-dark" type="text" id="lnama" name="lnama" placeholder="Akhir" required />
               </div>
             </div>
             <br />
             <div class="text-md-start">
               E-mail:
-              <input class="opacity-05" type="text" id="email" name="email" placeholder="example@mail.com" required />
+              <form class="form-control" style="background-color: rgba(255, 255, 255, 0.15); backdrop-filter: blur(5px);">
+                <input type="email" class="opacity-05" id="email" required>
+                <label class="text-light" for="floatingInputValue">name@example.com</label>
+              </form>
             </div>
             <br />
             <div class="text-md-start">
@@ -63,12 +66,16 @@
             </div>
             <br />
             <div>
-              <button type="button" class="btn btn-dark" id="btn">Submit</button>
+              <button type="button" class="btn btn-dark" id="btn">Oke</button>
             </div>
           </div>
-          <div class="text-start" id="tampilanInputs1"></div>
-          <div class="text-start" id="tampilanInputs2"></div>
-          <div class="text-start" id="tampilanInputs3"></div>
+          <div class="text-md-start" id="tampilanInputs1"></div>
+          <div class="text-md-start" id="tampilanInputs2"></div>
+          <div class="text-md-start" id="tampilanInputs3"></div>
+          <div class="container mt-5">
+            <div class="alert alert-danger alert-dismissible fade show" role="alert" id="alert" style="display: none;">
+              Mohon lengkapi semua kolom!
+            </div>
         </div>
       </div>
     </div>

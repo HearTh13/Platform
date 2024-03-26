@@ -1,17 +1,13 @@
 body {
-  min-height: 500px;
+  min-height: 700px;
   background-image: url('img/background.avif');
 }
 .jumbotron {
   padding-top: 2rem;
 }
 
-#projects {
-  background-color: #eeeee4;
-}
-
 #con {
-  padding-top: 2rem;
+  padding-top: 6rem;
 }
 
 #container {
@@ -24,15 +20,15 @@ body {
 }
 
 #fnama {
-  width: 520px;
+  width: 510px;
 }
 
 #lnama {
-  width: 520px;
+  width: 510px;
 }
 
 #email {
-  width: 1065px;
+  width: 1040px;
 }
 
 .dropdown-menu {
