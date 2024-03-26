@@ -152,7 +152,7 @@ function tampilkanData() {
 
   var tampil = document.createElement('div');
   tampil.className = 'text-light';
-  tampil.innerHTML = '<p>Hallo, nama saya ' + fnama + ' ' + lnama + ' dengan e-mail ' + email + ', saya mempunyai sejumlah ' + jumlah + ' hobby pilihan yaitu: ';
+  tampil.innerHTML = '<p>Hallo, nama saya ' + fnama + ' ' + lnama + ' dengan e-mail ' + email + '. Saya mempunyai sejumlah ' + jumlah + ' hobby pilihan yaitu: ';
   for (var i = 0; i < jumlah; i++) {
     if (i == jumlah - 1) {
       tampil.innerHTML += ' dan ' + data[i];
