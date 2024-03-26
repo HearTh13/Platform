@@ -68,3 +68,10 @@ body {
 .pad-3 {
   padding-left: 2rem;
 }
+
+.table tr td,
+table tr th {
+  background-color: rgba(250, 236, 255, 0.3);
+  backdrop-filter: blur(5px);
+  border-radius: 7px;
+}

@@ -12,7 +12,7 @@ document.getElementById('btn').addEventListener('click', function () {
   fnama = document.getElementById('fnama').value;
   lnama = document.getElementById('lnama').value;
   email = document.getElementById('email').value;
-  if (fnama !== '' && lnama !== '' && jumlah !== '' && email !== '' && fnama !== null && lnama !== null && jumlah !== null && email !== null) {
+  if (fnama !== '' && lnama !== '' && jumlah !== '' && email !== '' && fnama !== null && lnama !== null && jumlah !== null && email !== null && jumlah > 0 && jumlah < 100) {
     document.getElementById('alert').style.display = 'none';
     this.remove();
     textInput();
