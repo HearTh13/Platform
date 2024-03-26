@@ -1,5 +1,6 @@
 var tampilanInputs;
-var nama;
+var fnama;
+var lnama;
 var data = [];
 var radio = [];
 var jumlah;
@@ -7,8 +8,9 @@ var pilihan;
 
 document.getElementById('btn').addEventListener('click', function () {
   jumlah = document.getElementById('jumlah').value;
-  nama = document.getElementById('nama').value;
-  if (nama !== '' && jumlah !== '' && nama !== null && jumlah !== null) {
+  fnama = document.getElementById('fnama').value;
+  lnama = document.getElementById('lnama').value;
+  if (fnama !== '' && fnama !== '' && jumlah !== '' && fnama !== null && fnama !== null && jumlah !== null) {
     this.remove();
     textInput();
   }
@@ -23,11 +25,13 @@ function textInput() {
 
   for (var i = 1; i <= jumlah; i++) {
     var label = document.createElement('label');
+    label.className = 'text-light';
     label.innerHTML = 'Pilihan ' + i + ':';
 
     input[i - 1] = document.createElement('input');
     input[i - 1].type = 'text';
     input[i - 1].name = 'teksTampilan' + i;
+    input[i - 1].className = 'opacity-05';
 
     tampilanInputs.appendChild(label);
     tampilanInputs.appendChild(input[i - 1]);
