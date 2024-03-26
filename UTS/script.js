@@ -26,6 +26,10 @@ function textInput() {
 
   tampilanInputs.innerHTML = '';
 
+  var garis = document.createElement('hr');
+  garis.className = 'my-4';
+  tampilanInputs.appendChild(garis);
+
   var input = [];
 
   for (var i = 1; i <= jumlah; i++) {
@@ -78,6 +82,10 @@ function textInput() {
 function textRadio() {
   jumlah = document.getElementById('jumlah').value;
   tampilanInputs = document.getElementById('tampilanInputs2');
+
+  var garis = document.createElement('hr');
+  garis.className = 'my-4';
+  tampilanInputs.appendChild(garis);
 
   var title = document.createElement('div');
   title.className = 'text-md-start text-light';
@@ -137,7 +145,11 @@ function textRadio() {
 
 function tampilkanData() {
   tampilanInputs = document.getElementById('tampilanInputs3');
-  console.log(jumlah);
+
+  var garis = document.createElement('hr');
+  garis.className = 'my-4';
+  tampilanInputs.appendChild(garis);
+
   var tampil = document.createElement('div');
   tampil.className = 'text-light';
   tampil.innerHTML = '<p>Hallo, nama saya ' + fnama + ' ' + lnama + ' dengan e-mail ' + email + ', saya mempunyai sejumlah ' + jumlah + ' hobby pilihan yaitu: ';
