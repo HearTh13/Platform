@@ -28,8 +28,17 @@ $y = 20;
     <?php var_dump($x == $y || $x == 10); ?>
     <br />
     <?php for($i = 0; $i < 5; $i++){
-      print("NECO CHOMP");
-      echo "<br />";
+      print("NECO CHOMP <br />");
     } ?>
+    <br />
+    <?php while ($x < $y){
+      print("NECO <br />");
+      $x++;
+    } ?>
+    <br />
+    <?php do {
+      print($y);
+      $x++;
+    } while($x < $y) ?>
   </body>
 </html>
