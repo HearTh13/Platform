@@ -65,11 +65,38 @@ $y = 20;
       if($m < 20){
         echo "benar";
       } else if($m == 20){
-        echo "bingo!"
+        echo "bingo!";
       } else{
         echo "salah";
       }
     ?>
-
+    <br>
+    <br>
+    <!-- Built-in Function -->
+    <?php 
+      echo date("l, d-M-Y");
+      echo "<br>";
+      echo date("d M Y", time()-60*60*24*100);
+      echo "<br>";
+      echo date("l, d M Y", mktime(0,0,0,8,25,1985));
+      echo "<br>";
+      echo date("l, d M Y", strtotime("25 aug 2015"));
+    ?>
+    <br>
+    <br>
+    <!-- Self-defined Function -->
+    <?php 
+     function salam($waktu, $nama){
+      return "Selamat $waktu, $nama!";
+     }
+     echo salam("Pagi", "Tyo");
+    ?>
+    <br>
+    <br>
+    <!-- Array -->
+    <?php
+      $hari = array("Senin", "Selasa", "Rabu");
+      $bulan = ["Januari", "Februari", "Maret"];
+    ?>
   </body>
 </html>
