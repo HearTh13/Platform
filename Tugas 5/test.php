@@ -2,6 +2,11 @@
 $nama = "Achmad";
 $x = 10;
 $y = 20;
+$login_connection = mysqli_connect("localhost", "root", "", "test");
+$login_result = mysqli_query($login_connection, "SELECT * FROM login");
+while($login_rows = mysqli_fetch_assoc($login_result)){
+  print($login_rows["Username"]);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -98,5 +103,16 @@ $y = 20;
       $hari = array("Senin", "Selasa", "Rabu");
       $bulan = ["Januari", "Februari", "Maret"];
     ?>
+    <table border="1" cellpadding="10" cellpadding="0">
+      <tr>
+        <th>No.</th>
+        <th>Username</th>
+        <th>Password</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Achmad</td>
+        <td>Tyo123</td>
+      </tr>
   </body>
 </html>

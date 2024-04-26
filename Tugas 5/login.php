@@ -11,7 +11,7 @@
     <title>Login Page</title>
   </head>
   <body>
-    <h1></h1>
+    <h1>Login Page</h1>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
