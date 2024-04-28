@@ -38,4 +38,26 @@ function registrasi($data){
 
 }
 
+function login($data){
+    global $conn;
+    $username = $data["username"];
+    $password = $data["password"];
+
+    $result = mysqli_query($conn,"SELECT * FROM login WHERE username = '$username'");
+    if (mysqli_num_rows($result) === 1){
+        $row = mysqli_fetch_assoc($result);
+        if(password_verify($password, $row["Password"])){
+            header("Location: to-do.php");
+            exit;
+        }
+    }
+
+    echo "<script> alert('Username atau Password anda mungkin salah!');</script>";
+
+}
+
+function todo(){
+    
+}
+
 ?>

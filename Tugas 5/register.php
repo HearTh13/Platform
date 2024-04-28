@@ -56,7 +56,7 @@
               <label for="password2">Re-Enter Password</label>
               <input type="password" class="form-control" name="password2" id="password2" placeholder="Enter Password">
             </div>
-            <button type="submit" name="register" class="btn btn-primary">Submit</button>
+            <button type="submit" name="register" class="btn btn-primary">Register</button>
           </form>
         </section>
         <!-- Akhir Jumbotron -->

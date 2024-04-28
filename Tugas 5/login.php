@@ -1,14 +1,9 @@
 <?php
   // Connection
   require 'functions.php';
-  if (isset($_POST["register"])){
-    if (registrasi($_POST) > 0){
-      echo "<script>alert('User baru telah ditambahkan')</script>";
-    } else {
-      echo mysqli_error($conn);
-    }
+  if (isset($_POST["login"])){
+    login($_POST);
   }
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -52,7 +47,7 @@
               <label for="password">Password</label>
               <input type="password" class="form-control" name="password" id="password" placeholder="Enter Password">
             </div>
-            <button type="submit" name="register" class="btn btn-primary">Submit</button>
+            <button type="submit" name="login" class="btn btn-primary">Login</button>
           </form>
         </section>
         <!-- Akhir Jumbotron -->
