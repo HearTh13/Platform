@@ -1,13 +1,8 @@
 <?php
   // Connection
-  $login_connection = mysqli_connect("localhost", "root", "", "test");
-  $login_result = mysqli_query($login_connection, "SELECT * FROM login");
-  if (!$login_result){
-    echo mysqli_error($login_connection);
-  }
-
+  require 'functions.php';
   if (isset($_POST["register"])){
-    if (isset($_POST["register"]) > 0){
+    if (registrasi($_POST) > 0){
       echo "<script>alert('User baru telah ditambahkan')</script>";
     } else {
       echo mysqli_error($login_connection);
@@ -25,7 +20,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <title>Login Page</title>
+    <title>Registration Page</title>
   </head>
   <body>
   <!--Navigation-->
@@ -55,11 +50,11 @@
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" name="password" id="Password" placeholder="Enter Password">
+              <input type="password" class="form-control" name="password" id="password" placeholder="Enter Password">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Re-Enter Password</label>
-              <input type="password" class="form-control" name="password2" id="Password" placeholder="Enter Password">
+              <input type="password" class="form-control" name="password2" id="password2" placeholder="Enter Password">
             </div>
             <button type="submit" name="register" class="btn btn-primary">Submit</button>
           </form>
