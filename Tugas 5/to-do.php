@@ -1,3 +1,13 @@
+<?php
+
+// Connection
+require 'functions.php';
+$username = $_GET["name"];
+if (isset($_POST["login"])){
+  login($_POST);
+}
+
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -11,32 +21,68 @@
     <title>To-do List</title>
   </head>
   <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">List Page</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav ">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Logout<span class="sr-only">(current)</span></a>
-      </li>
-    </ul>
-  </div>
-</nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">List Page</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ">
+          <li class="nav-item active">
+            <a class="nav-link" href="http://localhost/platform/Tugas%205/login.php">Logout<span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
     <!-- Container -->
     <div id="con">
       <div class="container-md shadow-sm text-dark" id="container">
         <!-- Jumbotron -->
         <section class="jumbotron text-center profile">
-        <form>
+        <form action="" method="post">
         <form class="form-inline">
-  <div class="form-group mx-sm-3 mb-2">
-    <input type="password" class="form-control" id="inputPassword2" placeholder="Aktivitas Anda">
-  </div>
-  <button type="submit" class="btn btn-primary mb-2">Tambah</button>
-</form>
+          <div class="form-group mx-sm-3 mb-2">
+            <input type="password" class="form-control" id="inputPassword2" placeholder="Aktivitas Anda">
+          </div>
+          <button type="submit" class="btn btn-primary mb-2">Tambah</button>
+        </form>
+        </section>
+        <!-- Akhir Jumbotron -->
+      </div>
+    </div>
+    <!-- End Container -->
+    <!-- Container -->
+    <div id="con">
+      <div class="container-md shadow-sm text-dark" id="container">
+        <!-- Jumbotron -->
+        <section class="jumbotron text-center profile">
+        <form>
+          <table border="1" cellpadding="10" cellpadding="0">
+            <?php
+              $i = 0;
+              $login_result = mysqli_query($conn, "SELECT * FROM activity WHERE Username = '$username'");
+              while ($row = mysqli_fetch_assoc($login_result)){
+                $i += 1;
+                if ($i == 1){
+            ?>
+            <tr>
+              <th>Aktivitas</th>
+              <th></th>
+              <th></th>
+            </tr>
+            <?php
+                }
+            ?>
+            <tr>
+              <td><?php echo $row["To Do"]; ?></td>
+              <td><button></button></td>
+              <td><button></button></td>
+            </tr>
+            <?php 
+              }
+            ?>
+        </form>
         </section>
         <!-- Akhir Jumbotron -->
       </div>
