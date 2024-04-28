@@ -3,8 +3,14 @@ require 'functions.php';
 $nama = "Achmad";
 $x = 10;
 $y = 20;
-$conn = mysqli_connect("localhost", "root", "", "test");
 $login_result = mysqli_query($conn, "SELECT * FROM login");
+if (isset($_POST["register"])){
+  $nama = "Tyo";
+}
+function get_x(){
+  global $y;
+  echo $y;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -112,6 +118,8 @@ $login_result = mysqli_query($conn, "SELECT * FROM login");
       </tr>
       <?php 
         }
+        var_dump($_POST)
       ?>
+      <button type="submit" name="register" id="register">Reg</button>
   </body>
 </html>

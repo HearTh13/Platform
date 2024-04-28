@@ -5,7 +5,7 @@
     if (registrasi($_POST) > 0){
       echo "<script>alert('User baru telah ditambahkan')</script>";
     } else {
-      echo mysqli_error($login_connection);
+      echo mysqli_error($conn);
     }
   }
 
@@ -32,7 +32,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Login<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="http://localhost/platform/Tugas%205/login.php">Login<span class="sr-only">(current)</span></a>
           </li>
         </ul>
       </div>
@@ -43,17 +43,17 @@
       <div class="container-md shadow-sm text-dark" id="container">
         <!-- Jumbotron -->
         <section class="jumbotron text-center profile">
-          <form>
+          <form action="" method="post">
             <div class="form-group">
-              <label for="exampleInputEmail1">Username</label>
-              <input class="form-control" name="username" id="username" placeholder="Enter Username">
+              <label for="username">Username</label>
+              <input type="text" class="form-control" name="username" id="username" placeholder="Enter Username">
             </div>
             <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
+              <label for="password">Password</label>
               <input type="password" class="form-control" name="password" id="password" placeholder="Enter Password">
             </div>
             <div class="form-group">
-              <label for="exampleInputPassword1">Re-Enter Password</label>
+              <label for="password2">Re-Enter Password</label>
               <input type="password" class="form-control" name="password2" id="password2" placeholder="Enter Password">
             </div>
             <button type="submit" name="register" class="btn btn-primary">Submit</button>

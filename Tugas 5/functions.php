@@ -24,7 +24,7 @@ function registrasi($data){
 
     $result = mysqli_query($conn, "SELECT Username FROM login WHERE Username = '$username'");
 
-    if ($result){
+    if (mysqli_fetch_assoc($result)){
         echo "<script>alert('Username sudah ada!')</script>";
         return false;
     }

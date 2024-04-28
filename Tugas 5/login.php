@@ -1,3 +1,15 @@
+<?php
+  // Connection
+  require 'functions.php';
+  if (isset($_POST["register"])){
+    if (registrasi($_POST) > 0){
+      echo "<script>alert('User baru telah ditambahkan')</script>";
+    } else {
+      echo mysqli_error($conn);
+    }
+  }
+
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -11,7 +23,42 @@
     <title>Login Page</title>
   </head>
   <body>
-    <h1>Login Page</h1>
+  <!--Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Login</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ">
+          <li class="nav-item active">
+            <a class="nav-link" href="http://localhost/platform/Tugas%205/register.php">Register<span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!--End of Navigation-->
+    <!-- Container -->
+    <div id="con">
+      <div class="container-md shadow-sm text-dark" id="container">
+        <!-- Jumbotron -->
+        <section class="jumbotron text-center profile">
+          <form action="" method="post">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" class="form-control" name="username" id="username" placeholder="Enter Username">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" name="password" id="password" placeholder="Enter Password">
+            </div>
+            <button type="submit" name="register" class="btn btn-primary">Submit</button>
+          </form>
+        </section>
+        <!-- Akhir Jumbotron -->
+      </div>
+    </div>
+    <!-- End Container -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
