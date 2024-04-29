@@ -1,12 +1,11 @@
 <?php
 
-// if (!isset($_SESSION["login"])){
-//   header('location: http://localhost/platform/Tugas%205/login.php');
-//   exit;
-// }
-
 // Connection
 require 'functions.php';
+if (!isset($_SESSION["login"])){
+  header('location: http://localhost/platform/Tugas%205/login.php');
+  exit;
+}
 $username = $_GET["name"];
 if (isset($_POST["tambah"])){
   tambah($username, $_POST);
@@ -60,7 +59,7 @@ if (isset($_GET["hapus"])){
         <form class="text-light" action="" method="post" class="form-inline">
           <div class="form-group mx-sm-3 mb-2">
             <input type="text" name="aktivitas" class="form-control" placeholder="Masukan Aktivitas Anda">
-            <button class="btn btn-purple" type="submit" name="tambah">Tambah</button>
+            <button class="btn btn-orange" type="submit" name="tambah">Tambah</button>
           </div>
         </form>
         <!-- </section> -->
@@ -74,7 +73,7 @@ if (isset($_GET["hapus"])){
         <!-- Jumbotron -->
         <!-- <section class="jumbotron text-center"> -->
         <form action="" method="post" class="form-inline justify-content-center text-light">
-          <table cellpadding="10" cellpadding="0" class="table table-bordered">
+          <table cellpadding="10" cellpadding="0" class="table table-bordered new-tabel">
             <?php
               $i = 0;
               $login_result = mysqli_query($conn, "SELECT * FROM activity WHERE Username = '$username'");
@@ -98,14 +97,14 @@ if (isset($_GET["hapus"])){
               if($row["Status"] === "no"){
                 echo "
                 <td>$row2</td>
-                <td><button class='btn btn-purple' name='selesai $i' id='selesai $i'><a href='to-do.php?name=$username&selesai=$row2'>Selesai</a></button></td>";
+                <td><button class='btn btn-white' name='selesai $i' id='selesai $i'><a href='to-do.php?name=$username&selesai=$row2'>Selesai</a></button></td>";
               } elseif ($row["Status"] === "yes"){
                 echo "
                 <td><s>$row2</s></td>
-                <td><button class='btn btn-purple' name='selesai $i' id='selesai $i' disabled>Selesai</button></td>";
+                <td><button class='btn btn-white' name='selesai $i' id='selesai $i' disabled>Selesai</button></td>";
               } 
               echo"
-              <td><button class='btn btn-purple' name='hapus$i id='hapus$i'><a href='to-do.php?name=$username&hapus=$row2'>Hapus</a></button></td>"
+              <td><button class='btn btn-white' name='hapus$i id='hapus$i'><a href='to-do.php?name=$username&hapus=$row2'>Hapus</a></button></td>"
               ?>
             </tr>
             <?php 
