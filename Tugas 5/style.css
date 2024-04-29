@@ -1,6 +1,5 @@
 body {
-  min-height: 700px;
-  background-image: url('img/background.avif');
+  background-image: url('https://images.alphacoders.com/131/thumb-1920-1311951.jpg');
 }
 .jumbotron {
   padding-top: 2rem;
@@ -14,7 +13,7 @@ body {
   padding-top: 1rem;
   border-radius: 15px;
   padding-bottom: 1rem;
-  background-color: rgb(255, 255, 255);
+  background-color: #ffffff;
   backdrop-filter: blur(5px);
   border: 2px solid #6299ff;
 }
