@@ -18,6 +18,7 @@
     <title>Login Page</title>
   </head>
   <body>
+    <link rel="stylesheet" href="style.css" />
   <!--Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">Login</a>

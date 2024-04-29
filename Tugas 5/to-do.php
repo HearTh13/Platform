@@ -3,8 +3,16 @@
 // Connection
 require 'functions.php';
 $username = $_GET["name"];
-if (isset($_POST["login"])){
-  login($_POST);
+if (isset($_POST["tambah"])){
+  tambah($username, $_POST);
+}
+if(isset($_GET["selesai"])){
+  $todo = $_GET["selesai"];
+  $result = mysqli_query($conn, "UPDATE activity SET Status = 'yes' WHERE Username = '$username' AND `To Do` = '$todo'");
+}
+if (isset($_GET["hapus"])){
+  $todo = $_GET["hapus"];
+  $result = mysqli_query($conn,"DELETE FROM activity WHERE Username = '$username' AND `To Do` = '$todo'");
 }
 
 ?>
@@ -21,6 +29,7 @@ if (isset($_POST["login"])){
     <title>To-do List</title>
   </head>
   <body>
+    <link rel="stylesheet" href="style.css" />
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">List Page</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,28 +46,27 @@ if (isset($_POST["login"])){
 
     <!-- Container -->
     <div id="con">
-      <div class="container-md shadow-sm text-dark" id="container">
+      <div class="container container-md shadow-sm text-dark" id="container">
         <!-- Jumbotron -->
-        <section class="jumbotron text-center profile">
-        <form action="" method="post">
-        <form class="form-inline">
+        <!-- <section class="jumbotron text-center"> -->
+        <form action="" method="post" class="form-inline">
           <div class="form-group mx-sm-3 mb-2">
-            <input type="password" class="form-control" id="inputPassword2" placeholder="Aktivitas Anda">
+            <input type="text" name="aktivitas" class="form-control" placeholder="Masukan Aktivitas Anda">
+            <button type="submit" name="tambah">Tambah</button>
           </div>
-          <button type="submit" class="btn btn-primary mb-2">Tambah</button>
         </form>
-        </section>
+        <!-- </section> -->
         <!-- Akhir Jumbotron -->
       </div>
     </div>
     <!-- End Container -->
     <!-- Container -->
     <div id="con">
-      <div class="container-md shadow-sm text-dark" id="container">
+      <div class="container container-md shadow-sm text-dark" id="container">
         <!-- Jumbotron -->
-        <section class="jumbotron text-center profile">
-        <form>
-          <table border="1" cellpadding="10" cellpadding="0">
+        <!-- <section class="jumbotron text-center"> -->
+        <form action="" method="post" class="form-inline justify-content-center">
+          <table cellpadding="10" cellpadding="0" class="table table-bordered">
             <?php
               $i = 0;
               $login_result = mysqli_query($conn, "SELECT * FROM activity WHERE Username = '$username'");
@@ -67,23 +75,37 @@ if (isset($_POST["login"])){
                 if ($i == 1){
             ?>
             <tr>
+              <th>No.</th>
               <th>Aktivitas</th>
-              <th></th>
-              <th></th>
+              <th>Tombol Selesai</th>
+              <th>Tombol Hapus</th>
             </tr>
             <?php
                 }
             ?>
             <tr>
-              <td><?php echo $row["To Do"]; ?></td>
-              <td><button></button></td>
-              <td><button></button></td>
+              <td><?php echo $i; ?></td>
+              <?php 
+              $row2 = $row["To Do"];
+              if($row["Status"] === "no"){
+                echo "
+                <td>$row2</td>
+                <td><button name='selesai $i' id='selesai $i'><a href='to-do.php?name=$username&selesai=$row2'>Selesai</a></button></td>";
+              } elseif ($row["Status"] === "yes"){
+                echo "
+                <td><s>$row2</s></td>
+                <td><button name='selesai $i' id='selesai $i' disabled>Selesai</button></td>";
+              } 
+              echo"
+              <td><button name='hapus$i id='hapus$i'><a href='to-do.php?name=$username&hapus=$row2'>Hapus</a></button></td>"
+              ?>
             </tr>
             <?php 
               }
             ?>
         </form>
-        </section>
+        
+        <!-- </section> -->
         <!-- Akhir Jumbotron -->
       </div>
     </div>

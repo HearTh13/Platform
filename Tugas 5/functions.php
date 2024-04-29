@@ -56,5 +56,11 @@ function login($data){
 
 }
 
+function tambah($username, $data){
+    global $conn;
+    $activity = $data["aktivitas"];
+    mysqli_query($conn,"INSERT INTO activity VALUES ('', '$username', '$activity', 'no')");
+
+}
 
 ?>
