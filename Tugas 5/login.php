@@ -36,9 +36,7 @@
     <!--End of Navigation-->
     <!-- Container -->
     <div id="con">
-      <div class="container-md shadow-sm text-dark" id="container">
-        <!-- Jumbotron -->
-        <section class="jumbotron text-center profile">
+      <div class="container container-md shadow-sm text-dark" id="container">
           <form action="" method="post">
             <div class="form-group">
               <label for="username">Username</label>
@@ -50,8 +48,6 @@
             </div>
             <button type="submit" name="login" class="btn btn-primary">Login</button>
           </form>
-        </section>
-        <!-- Akhir Jumbotron -->
       </div>
     </div>
     <!-- End Container -->
