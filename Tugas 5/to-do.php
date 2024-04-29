@@ -35,7 +35,7 @@ if (isset($_GET["hapus"])){
   </head>
   <body>
     <link rel="stylesheet" href="style.css" />
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm" id="navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm" id="navbar">
       <a class="navbar-brand" href="#">List Page</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -57,10 +57,10 @@ if (isset($_GET["hapus"])){
       <div class="container container-md shadow-sm text-dark" id="container">
         <!-- Jumbotron -->
         <!-- <section class="jumbotron text-center"> -->
-        <form action="" method="post" class="form-inline">
+        <form class="text-light" action="" method="post" class="form-inline">
           <div class="form-group mx-sm-3 mb-2">
             <input type="text" name="aktivitas" class="form-control" placeholder="Masukan Aktivitas Anda">
-            <button type="submit" name="tambah">Tambah</button>
+            <button class="btn btn-purple" type="submit" name="tambah">Tambah</button>
           </div>
         </form>
         <!-- </section> -->

@@ -25,7 +25,7 @@
   <body>
     <link rel="stylesheet" href="style.css" />
   <!--Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm" id="navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm" id="navbar">
       <a class="navbar-brand" href="#">Registration</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -45,7 +45,7 @@
     <!-- Container -->
     <div id="con">
       <div class="container container-md shadow-sm text-dark" id="container">
-          <form action="" method="post">
+          <form class="text-light" action="" method="post">
             <div class="form-group">
               <label for="username">Username</label>
               <input type="text" class="form-control" name="username" id="username" placeholder="Enter Username">
@@ -58,7 +58,7 @@
               <label for="password2">Re-Enter Password</label>
               <input type="password" class="form-control" name="password2" id="password2" placeholder="Enter Password">
             </div>
-            <button type="submit" name="register" class="btn btn-primary">Register</button>
+            <button type="submit" name="register" class="btn btn-purple">Register</button>
           </form>
       </div>
     </div>

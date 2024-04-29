@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="style.css" />
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm" id="navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm" id="navbar">
       <div class="container-fluid">
         <a class="navbar-brand" href="beranda.html">
           Achmad Herlambang Prasetyo
@@ -31,8 +31,8 @@
         <!-- Jumbotron -->
         <section class="jumbotron text-center profile tron">
           <img src="https://i.pinimg.com/736x/0f/60/76/0f607674cc6dd7a224857a690c59b807.jpg" alt="My Face" width="200" class="rounded-circle img-thumbnail" />
-          <h1 class="text-dark fs-5">Achmad Herlambang Prasetyo</h1>
-          <p class="con text-dark">225314018</p>
+          <h1 class="text-light fs-5">Achmad Herlambang Prasetyo</h1>
+          <p class="con text-light">225314018</p>
         </section>
         <!-- Akhir Jumbotron -->
       </div>

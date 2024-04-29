@@ -20,13 +20,13 @@
   <body>
     <link rel="stylesheet" href="style.css" />
   <!--Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm" id="navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm" id="navbar">
       <a class="navbar-brand" href="#">Login</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-md-end" id="navbarNav">
-        <ul class="navbar-nav ">
+        <ul class="navbar-nav">
           <li class="nav-item active">
             <a class="nav-link" href="http://localhost/platform/Tugas%205/register.php">Register<span class="sr-only">(current)</span></a>
           </li>
@@ -40,7 +40,7 @@
     <!-- Container -->
     <div id="con">
       <div class="container container-md shadow-sm text-dark" id="container">
-          <form action="" method="post">
+          <form class="text-light" action="" method="post">
             <div class="form-group">
               <label for="username">Username</label>
               <input type="text" class="form-control" name="username" id="username" placeholder="Enter Username">
@@ -49,7 +49,7 @@
               <label for="password">Password</label>
               <input type="password" class="form-control" name="password" id="password" placeholder="Enter Password">
             </div>
-            <button type="submit" name="login" class="btn btn-primary">Login</button>
+            <button type="submit" name="login" class="btn btn-purple">Login</button>
           </form>
       </div>
     </div>
