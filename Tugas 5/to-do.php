@@ -1,5 +1,10 @@
 <?php
 
+if (!isset($_SESSION["login"])){
+  header('location: http://localhost/platform/Tugas%205/login.php');
+  exit;
+}
+
 // Connection
 require 'functions.php';
 $username = $_GET["name"];

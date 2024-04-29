@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 $conn = mysqli_connect("localhost", "root", "", "test");
 function querry($querry){
     global $conn;
@@ -47,6 +48,8 @@ function login($data){
     if (mysqli_num_rows($result) === 1){
         $row = mysqli_fetch_assoc($result);
         if(password_verify($password, $row["Password"])){
+            $_SESSION["login"] = true;
+            
             header("Location: to-do.php?name=$username");
             exit;
         }
