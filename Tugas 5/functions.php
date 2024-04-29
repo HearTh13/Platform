@@ -49,7 +49,6 @@ function login($data){
         $row = mysqli_fetch_assoc($result);
         if(password_verify($password, $row["Password"])){
             $_SESSION["login"] = true;
-            
             header("Location: to-do.php?name=$username");
             exit;
         }

@@ -13,6 +13,11 @@ body {
   padding-top: 6rem;
 }
 
+a {
+  color: inherit; /* Menetapkan warna teks tautan sesuai dengan warna teks elemen induknya */
+  text-decoration: none; /* Menghapus garis bawah dari tautan */
+}
+
 #container {
   padding-top: 1rem;
   border-radius: 15px;

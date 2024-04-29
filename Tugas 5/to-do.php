@@ -1,9 +1,9 @@
 <?php
 
-if (!isset($_SESSION["login"])){
-  header('location: http://localhost/platform/Tugas%205/login.php');
-  exit;
-}
+// if (!isset($_SESSION["login"])){
+//   header('location: http://localhost/platform/Tugas%205/login.php');
+//   exit;
+// }
 
 // Connection
 require 'functions.php';
@@ -73,7 +73,7 @@ if (isset($_GET["hapus"])){
       <div class="container container-md shadow-sm text-dark" id="container">
         <!-- Jumbotron -->
         <!-- <section class="jumbotron text-center"> -->
-        <form action="" method="post" class="form-inline justify-content-center">
+        <form action="" method="post" class="form-inline justify-content-center text-light">
           <table cellpadding="10" cellpadding="0" class="table table-bordered">
             <?php
               $i = 0;
@@ -98,14 +98,14 @@ if (isset($_GET["hapus"])){
               if($row["Status"] === "no"){
                 echo "
                 <td>$row2</td>
-                <td><button name='selesai $i' id='selesai $i'><a href='to-do.php?name=$username&selesai=$row2'>Selesai</a></button></td>";
+                <td><button class='btn btn-purple' name='selesai $i' id='selesai $i'><a href='to-do.php?name=$username&selesai=$row2'>Selesai</a></button></td>";
               } elseif ($row["Status"] === "yes"){
                 echo "
                 <td><s>$row2</s></td>
-                <td><button name='selesai $i' id='selesai $i' disabled>Selesai</button></td>";
+                <td><button class='btn btn-purple' name='selesai $i' id='selesai $i' disabled>Selesai</button></td>";
               } 
               echo"
-              <td><button name='hapus$i id='hapus$i'><a href='to-do.php?name=$username&hapus=$row2'>Hapus</a></button></td>"
+              <td><button class='btn btn-purple' name='hapus$i id='hapus$i'><a href='to-do.php?name=$username&hapus=$row2'>Hapus</a></button></td>"
               ?>
             </tr>
             <?php 
