@@ -6,6 +6,8 @@ CREATE TABLE `login` (
   UNIQUE KEY `Username` (`Username`)
 ) 
 
+SELECT * FROM login;
+
 CREATE TABLE `activity` (
   `ID` int(255) NOT NULL AUTO_INCREMENT,
   `Username` varchar(255) NOT NULL,
@@ -13,3 +15,5 @@ CREATE TABLE `activity` (
   `Status` varchar(10) NOT NULL,
   PRIMARY KEY (`ID`)
 ) 
+
+SELECT * FROM activity;
