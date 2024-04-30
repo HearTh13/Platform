@@ -17,3 +17,7 @@ CREATE TABLE `activity` (
 ) 
 
 SELECT * FROM activity;
+
+SELECT activity.*
+FROM login
+JOIN activity ON login.`Username` = activity.`Username`;
