@@ -3,9 +3,15 @@
 // Connection
 require 'functions.php';
 if (!isset($_SESSION["login"])){
-  header('location: http://localhost/platform/Tugas%205/login.php');
+  header('location: http://localhost/platform/Tugas%205/logout.php');
   exit;
 }
+
+if (!isset($_GET["name"])){
+  header('location: http://localhost/platform/Tugas%205/logout.php');
+  exit;
+}
+
 $username = $_GET["name"];
 if (isset($_POST["tambah"])){
   tambah($username, $_POST);
