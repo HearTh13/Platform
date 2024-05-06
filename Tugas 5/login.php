@@ -28,10 +28,10 @@
       <div class="collapse navbar-collapse justify-content-md-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="http://localhost/platform/Tugas%205/register.php">Register<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="register.php">Register<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="http://localhost/platform/Tugas%205/beranda.php">About Me<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="beranda.php">About Me<span class="sr-only">(current)</span></a>
           </li>
         </ul>
       </div>

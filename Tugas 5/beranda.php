@@ -17,8 +17,8 @@
         </a>
         <div class="collapse navbar-collapse justify-content-md-end" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link active" href="http://localhost/platform/Tugas%205/register.php">Register</a>
-            <a class="nav-link active" href="http://localhost/platform/Tugas%205/login.php">Login</a>
+            <a class="nav-link active" href="register.php">Register</a>
+            <a class="nav-link active" href="login.php">Login</a>
           </div>
         </div>
       </div>

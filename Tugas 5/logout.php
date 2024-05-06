@@ -5,7 +5,7 @@ $_SESSION = [];
 session_unset();
 session_destroy();
 
-header("Location: http://localhost/platform/Tugas%205/login.php");
+header("Location: login.php");
 exit;
 
 ?>
