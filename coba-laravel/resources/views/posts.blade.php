@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do list | Blog</title>
-</head>
-<body>
-    <h1>Halaman Blog</h1>
-</body>
-</html>
+@extends('layouts.main')
+
+@section('content')
+  @foreach ($posts as $post)
+    <article class="mb-5">
+        <h1 class="text-light"> {{$post["Judul"]}} </h1>
+        <h2 class="text-light"> {{$post["Author"]}} </h2>
+        <p class="text-light"> {{$post["Body"]}} </p>
+    </article>
+  @endforeach
+@endsection
